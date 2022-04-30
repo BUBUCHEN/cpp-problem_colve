@@ -41,8 +41,18 @@ int main(){
     
     string cmd="git commit -m \"";
     cmd+=int2str(1900+ltm->tm_year);
-    cmd+=int2str(1+ltm->tm_mon);
-    cmd+=int2str(1+ltm->tm_mday);
+    if(1+ltm->tm_mon<10){
+        cmd+="0"+int2str(1+ltm->tm_mon);;
+    }
+    else{
+        cmd+=int2str(1+ltm->tm_mon);
+    }
+    if(ltm->tm_mday<10){
+        cmd+="0"+int2str(ltm->tm_mday);    
+    }
+    else{
+        cmd+=int2str(ltm->tm_mday);
+    }
     cmd+='"';
     cout<<cmd<<"\n";
     const char* c_s = cmd.c_str();
