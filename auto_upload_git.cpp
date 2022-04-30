@@ -48,5 +48,5 @@ int main(){
     const char* c_s = cmd.c_str();
     system(c_s);
     system("git push origin master");
-    
+    cout<<"\n\nupload success!!";
 }
